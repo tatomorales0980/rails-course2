@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <a href = "/questions/new">New Question</a>
+        <% @questions.each do |q| %>
+            <div>
+                <a href="/questions/edit?id=<%= q.id %>"> 
+                    <img src="edit.png" alt="Edit Record" style="width:42px;height:42px;border:1;">
+                </a>
+                 <a href="/questions/delete?id=<%= q.id %>"> 
+                    <img src="delete.jpg" alt="Delete Record" style="width:42px;height:42px;border:1;">
+                </a>
+                <%= q.question %>
+                <%= q.answer %>
+                <img height="50" src="<%= q.flag %>">
+            </div>
+        <% end %>    
+    </body>
+</html>
