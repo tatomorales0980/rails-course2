@@ -1,0 +1,23 @@
+<img src="/new.png" alt="Add Group" style="width:100px;height:100px;border:1;">
+<h2>New Group</h2>
+
+<table style="width:30%" align="left" bgcolor="#f0f0f5">
+<td style="text-align: center;">
+<form action="/products/edit" method="post">
+    <input type="hidden" name="id" value="<%= @group.id %>">
+    <div class="form-group">
+        <input type="text" name="name" value='<%= @group.name %>' placeholder="Group Name">
+    </div>    
+    <br>
+    <div class="form-group">
+        <textarea name="comments" placeholder="Comments" rows="10" cols="25"><%= @group.comments %>
+        </textarea>
+    </div>
+   <div>
+       <input type="submit" value="Sumbit">
+       <input type="reset" value="Reset">
+   </div>    
+
+</td>
+</table>
+    

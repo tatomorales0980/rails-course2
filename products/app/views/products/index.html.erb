@@ -1,0 +1,21 @@
+<a href='/products/new'>- NEW -</a>
+<hr style="border: 2px solid red;" />
+<br>
+<% @products.each do |product| %>
+    <div>
+        <%= product.bar_code %>
+        <%= product.description %>
+        <%= product.price %>
+        <%= product.group_id %>
+        <%= product.group.name %>
+        <a href="/products/edit?id=<%= product.id%>">
+           <input type="button" value="EDIT" />
+        </a>
+        <a href="/products/delete?id=<%= product.id%>">
+           <input type="button" value="DELETE" />
+        </a>        
+        <!--<a href="/products/edit?id=<%= product.id%>"> EDIT</a>-->
+        <!--<a href="/products/delete?id=<%= product.id%>"> DELETE</a>-->
+        <br>
+    </div>
+<% end %>

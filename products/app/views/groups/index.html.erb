@@ -1,0 +1,33 @@
+<hr style="border: 2px solid red;" />
+<table style="width:30%">
+    <tr>
+        <th>
+            <a href = "/groups/new" ADD>
+                <img src="/products1.png" alt="Add Group" style="width:100px;height:100px;border:1;">
+            </a>
+        </th>
+        <th>
+            <a href = "/products" ADD>
+                <img src="/barcode2.png" alt="Add Group" style="width:100px;height:100px;border:1;">
+            </a>
+        </th>
+    </tr>
+
+        <td align="center">GROUPS</td>
+        <td align="center">PRODUCTS</td>
+
+</table>
+<hr style="border: 2px solid red;" />
+<% @groups.each do |group|%>
+    <div>
+        <!--<form action="/groups/edit?id=<%= group.id%>">-->
+        <!--    <input type="submit" value="Edit" />-->
+        <!--</form>-->
+        <!--<form action="/groups/delete?id=<%= group.id%>">-->
+        <!--    <input type="submit" value="Delete" />-->
+        <!--</form>        -->
+        <a href="/groups/edit?id=<%= group.id%>">EDIT</a>
+        <a href="/groups/delete?id=<%= group.id%>">Delete</a>
+        <%= group.name %>
+    </div>
+<% end %>

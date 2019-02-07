@@ -1,0 +1,40 @@
+
+<h2>Edit Product</h2>
+
+<table style="width:30%" align="left" bgcolor="#f0f0f5">
+<td style="text-align: center;">
+<form action="/products/edit" method="post">
+    <input type="hidden" name="id" value="<%= @product.id %>">
+    <div class="form-group">
+        <input type="text" name="bar_code" value = '<%= @product.bar_code %>' placeholder="Barcode">
+    </div>    
+    <br>
+    <div class="form-group">
+        <input type="text" name="description" value = '<%= @product.description %>' placeholder="Description">
+    </div>
+    <br>
+    <div class="form-group">
+        <input type="text" name="price" value = '<%= @product.price %>' placeholder="Price $.$$">
+    </div>    
+    <br>
+    <div>
+        <select name="group_id">
+            <% @group.each do |group| %>
+            <% if group.id == @product.group_id %>
+            
+                <option value="<%= group.id%>" selected><%= group.name %></option>
+            <% else %>
+                <option value="<%= group.id%>"><%= group.name %></option>
+                <% end %>
+            <% end %>
+        </select>
+    </div>
+    <br>
+    <div>
+       <input type="submit" value="Sumbit">
+       <input type="reset" value="Reset">
+    </div>    
+
+</td>
+</table>
+    
