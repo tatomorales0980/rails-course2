@@ -1,0 +1,8 @@
+<a href="/students/new">NEW STUDENT</a>
+
+<% @students.each do |student| %>
+    <div>
+        <%= student.first_name %> <%= student.last_name %>
+        <%= student.course.name %>
+    </div>
+<% end %>
