@@ -1,0 +1,60 @@
+<table style="width:100%" border="0">
+    <tr>
+        <th>
+            <a href = "/contacts/new" ADD>
+                <img src="/add.png" alt="Add Contact" style="width:60px;height:60px;border:1;">
+            </a>
+        </th>
+        <th>
+            <a href = "/contacts/find">
+                <img src="/find.png" alt="Find Contact" style="width:60px;height:60px;border:1;">
+            </a>   
+        </th>
+        <th align="left">
+                <form action="/contacts/search" method="post">
+                    <input type="text" name="search_bothname" placeholder="Search Contact" size="50">
+                    <input type="submit" value="Search">                
+                </form>
+            </div>
+        </th>
+    </tr>        
+</table>
+
+<hr style="border: 2px solid orange;" />
+<table style="width:100%">
+  <tr>
+    <th></th>  
+    <th></th>
+    <th bgcolor="#ffa500" align="center">Firstname</th>
+    <th bgcolor="#ffa500" align="center">Lastname</th> 
+    <th bgcolor="#ffa500" align="center">Phone</th>
+    <th bgcolor="#ffa500" align="center">Email</th>
+    <th bgcolor="#ffa500" align="center">Address</th>
+    <th bgcolor="#ffa500" align="center">City</th>
+    <th bgcolor="#ffa500" align="center">State</th>
+    <th bgcolor="#ffa500" align="center">Zip</th>
+  </tr>
+  <% @contacts.each do |c| %>
+      <tr>
+        <td>
+            <a href="/contacts/edit?id=<%= c.id %>"> 
+                <img src="/edit.png" alt="Edit Record" style="width:30px;height:30px;border:0;">
+            </a>            
+        </td>   
+        <td>
+             <a href="/contacts/delete?id=<%= c.id %>"> 
+                <img src="/delete.png" alt="Delete Record" style="width:30px;height:30px;border:0;">
+            </a>           
+        </td>
+        <td bgcolor="#D5D8DC"><%= c.first_name %></td>
+        <td bgcolor="#D5D8DC"><%= c.last_name %></td> 
+        <td bgcolor="#D5D8DC"><%= c.phone %></td>
+        <td bgcolor="#D5D8DC"><%= c.email %></td>
+        <td bgcolor="#D5D8DC"><%= c.address %></td> 
+        <td bgcolor="#D5D8DC"><%= c.city %></td>    
+        <td bgcolor="#D5D8DC"><%= c.state %></td>
+        <td bgcolor="#D5D8DC"><%= c.zip %></td> 
+      </tr>
+  <% end %>
+</table>
+<hr style="border: 2px solid orange;" />

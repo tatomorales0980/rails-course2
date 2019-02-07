@@ -1,0 +1,33 @@
+<a href = "/">
+    <img src="/back.png" alt="Home Page" style="width:60px;height:60px;border:1;">
+</a>
+
+<hr style="border: 2px solid orange;" />
+<table style="width:100%">
+  <tr>
+    <th align="center">Firstname</th>
+    <th align="center">Lastname</th> 
+    <th align="center">Phone</th>
+    <th align="center">Email</th>
+    <th align="center">Address</th>
+    <th align="center">City</th>
+    <th align="center">State</th>
+    <th align="center">Zip</th>
+  </tr>
+  <% @contacts.each do |c| %>
+      <tr>
+        <td><%= c.first_name %></td>
+        <td><%= c.last_name %></td> 
+        <td><%= c.phone %></td>
+        <td><%= c.email %></td>
+        <td><%= c.address %></td> 
+        <td><%= c.city %></td>    
+        <td><%= c.state %></td>
+        <td><%= c.zip %></td> 
+      </tr>
+  <% end %>
+</table>
+<hr style="border: 2px solid orange;" />
+<a href = "/">
+    <img src="/back.png" alt="Home Page" style="width:60px;height:60px;border:1;">
+</a>
