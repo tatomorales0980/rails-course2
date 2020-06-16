@@ -1,0 +1,36 @@
+<html>
+    <body>
+        <style>
+            h1 {
+                text-align: center;
+                color: white;
+                background-color: orange;
+            }
+            footer {
+                text-align: center;
+                color: white;
+                background-color: orange;
+            }            
+            div {
+                  display: block;
+                  padding: 10px;
+                  border-color: red;
+            }
+            table, th, td {
+              /*display: table;*/
+              /*border-collapse: separate;*/
+              /*border-spacing: 2px;*/
+              /*border-color: black;*/
+              border-collapse: collapse;
+              border: 0px solid gray;
+            }            
+        </style>
+        <h1>.:: CONTACTS ::.</h1>
+        <%= yield %>
+        <footer>
+          <p>Created by Hector Morales</p>
+          <p>Contact information: <a href="mailto:tatomorales0980@gmail.com">
+          tatomorales0980@gmail.com</a>.</p>
+        </footer>        
+    </body>
+</html>

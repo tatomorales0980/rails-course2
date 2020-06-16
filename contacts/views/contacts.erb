@@ -1,0 +1,60 @@
+<table style="width:100%" border="0">
+    <tr>
+        <th>
+            <a href = "/contacts/new">
+                <img src="add.png" alt="Add Contact" style="width:60px;height:60px;border:1;">
+            </a>
+        </th>
+        <th>
+            <a href = "/contacts/find">
+                <img src="find.png" alt="Find Contact" style="width:60px;height:60px;border:1;">
+            </a>   
+        </th>
+        <th align="left">
+            <div>
+                <form action="/contacts/search_firstname" method="post">
+                    <input type="text" name="search_firstname" placeholder="Search Contact by First Name" size="50" >
+                    <input type="submit" value="Search1">
+                </form>
+            </div>
+            <div>
+                <form action="/contacts/search_lastname" method="post">
+                    <input type="text" name="search_lastname" placeholder="Search Contact by Last Name" size="50">
+                    <input type="submit" value="Search2">                
+                </form>
+            </div>
+            <div>
+                <form action="/contacts/search_bothname" method="post">
+                    <input type="text" name="search_bothname" placeholder="Search Contact" size="50">
+                    <input type="submit" value="Search3">                
+                </form>
+            </div>
+        </th>
+    </tr>        
+</table>
+
+<hr style="border: 2px solid orange;" />
+<% @contacts.each do |c| %>
+    <div>
+        <a href="/contacts/edit?id=<%= c.id %>"> 
+            <img src="edit.png" alt="Edit Record" style="width:30px;height:30px;border:0;">
+        </a>
+        <a href="/contacts/delete?id=<%= c.id %>"> 
+            <img src="delete.png" alt="Delete Record" style="width:30px;height:30px;border:0;">
+        </a>
+        <%= c.first_name %>
+        <%= c.last_name %>
+        <font color="red"><b> .:: Phone</b></font>
+        <%= c.phone %>
+        <font color="red"><b>.:: Email</b></font>
+        <%= c.email %>
+        <font color="red"><b>.:: Address</b></font>
+        <%= c.address %>
+        <font color="red"><b>.:: City</b></font>
+        <%= c.city %>
+        <font color="red"><b>.:: State</b></font>
+        <%= c.state %>
+        <font color="red"><b>.:: Zip</b></font>
+        <%= c.zip %>
+    </div>
+<% end %>    
